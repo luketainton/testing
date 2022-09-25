@@ -12,13 +12,12 @@ jobs:
       - name: pushover-actions
         uses: umahmood/pushover-actions@main
         env:
-          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_APP_KEY }}
-          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER_KEY }}
+          PUSHOVER_TOKEN: ${{secrets.PUSHOVER_APP_KEY}}
+          PUSHOVER_USER: ${{secrets.PUSHOVER_USER_KEY}}
         with:
-          status: ${{ job.status }}
-          title: CI Event - ${{ env.GITHUB_REPOSITORY }}
-#           message: 'Hello World!'
-#           url: "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          status: ${{job.status}}
+          title: CI Event - ${{github.repository}}
+          message: ${{github.ref}}
           url: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
           url_title: "Open Pipeline"
           priority: "1"
