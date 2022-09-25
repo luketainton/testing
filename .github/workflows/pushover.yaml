@@ -13,5 +13,5 @@ jobs:
         uses: clivern/pushover-actions@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_TOKEN }}
-          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
+          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_APP_KEY }}
+          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER_KEY }}
